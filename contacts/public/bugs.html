@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <script src="bootstrap/jquery.min.js"></script>
+  <script src="bootstrap/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row" style="padding:10px;">
+        <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                        <table class="table table-bordered round">
+                            <thead>
+                            <tr>
+                              <th style="text-align:center;">#1</th>
+                              <th style="text-align:center;">Bug 1: Hangs while closing Application</th>
+                              <th style="text-align:center;">Severity</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="text-align:center;">&nbsp;</th>
+                                <th style="text-align:center" id="bug1">Frequently Hangs while closing Application</th>
+                                <th style="text-align:center;">&nbsp;</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+                        <table class="table table-bordered round">
+                            <thead>
+                            <tr>
+                              <th style="text-align:center;">#2</th>
+                              <th style="text-align:center;">Bug 2: Hangs while closing Application</th>
+                              <th style="text-align:center;">Severity</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </a>
+                </div>
+                <div id="collapse2" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="text-align:center;">&nbsp;</th>
+                                <th style="text-align:center" id="bug2">Frequently Hangs while closing Application</th>
+                                <th style="text-align:center;">&nbsp;</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
+                        <table class="table table-bordered round">
+                            <thead>
+                            <tr>
+                              <th style="text-align:center;">#3</th>
+                              <th style="text-align:center;">Bug 3: Hangs while closing Application</th>
+                              <th style="text-align:center;">Severity</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </a>
+                </div>
+                <div id="collapse3" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="text-align:center;">&nbsp;</th>
+                                <th style="text-align:center" id="bug3">Frequently Hangs while closing Application</th>
+                                <th style="text-align:center;">&nbsp;</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div><div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
+                        <table class="table table-bordered round">
+                            <thead>
+                            <tr>
+                              <th style="text-align:center;">#4</th>
+                              <th style="text-align:center;">Bug 4: Hangs while closing Application</th>
+                              <th style="text-align:center;">Severity</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </a>
+                </div>
+                <div id="collapse4" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="text-align:center;">&nbsp;</th>
+                                <th style="text-align:center">Frequently Hangs while closing Application</th>
+                                <th style="text-align:center;">&nbsp;</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div><div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
+                        <table class="table table-bordered round">
+                            <thead>
+                            <tr>
+                              <th style="text-align:center;">#5</th>
+                              <th style="text-align:center;">Bug 5: Hangs while closing Application</th>
+                              <th style="text-align:center;">Severity</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </a>
+                </div>
+                <div id="collapse5" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th style="text-align:center;">&nbsp;</th>
+                                <th style="text-align:center" id="bug5">Frequently Hangs while closing Application</th>
+                                <th style="text-align:center;">&nbsp;</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+  <ul class="pager">
+    <!--<li class="previous"><a href="#">Previous</a></li>-->
+    <li class="next"><a href="bugs2.html">Next</a></li>
+  </ul>
+</div>
+
+</body>
+    <script>
+        $(".collapse").collapse();
+        $(document).ready(function()
+        { 
+            $.get("/contacts/bugs/", function(res){
+            $("#bug1").text(res.b1);
+                console.log(res.b1);
+            $("#bug2").text(res.b2);
+            $("#bug3").text(res.b3);
+            $("#bug4").text(res.b4);
+            $("#bug5").text(res.b5);
+                
+            $("#sev1").text(res.b1);
+            $("#sev2").text(res.b2);
+            $("#sev3").text(res.b3);
+            $("#sev4").text(res.b4);
+            $("#sev5").text(res.b5);
+            
+            });
+        });
+    </script>
+</html>
